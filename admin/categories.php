@@ -24,6 +24,10 @@
                         </form>
                     </div> <!-- add category form -->
                     <div class="col-xs-6">
+                        <?php
+                    $query = "SELECT * FROM categories";
+                    $select_categories = mysqli_query($connection, $query); 
+                    ?>
                         <table class="table table-boardered table-hover">
                             <thead>
                                 <tr>
@@ -32,10 +36,15 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Bassball Category</td>
-                                    <td>Basketball Category</td>
-                                </tr>
+                                <?php
+                    while ($row=mysqli_fetch_array ( $select_categories)){
+                    $cat_title = $row['cat_id'];
+                    $cat_title = $row['cat_title'];
+                    echo "<tr>";
+                    echo "<td>{$cat_id}Category</td>";
+                    echo "<td>{$cat_title}Category</td>";
+                    echo "</tr>";
+                    } ?>
 
                             </tbody>
                         </table>

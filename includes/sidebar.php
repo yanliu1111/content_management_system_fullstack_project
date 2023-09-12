@@ -20,8 +20,7 @@
     <div class="well">
         <?php
          $query = "SELECT * FROM categories";
-         $select_all_categories_sidebar = mysqli_query($connection, $query);
-      
+         $select_all_categories_sidebar = mysqli_query($connection, $query); 
         ?>
         <h4>Blog Categories</h4>
         <div class="row">

@@ -43,7 +43,7 @@ if (isset($_POST['submit'])){
                     $query = "SELECT * FROM categories";
                     $select_categories = mysqli_query($connection, $query); 
                     ?>
-                        <table class="table table-boardered table-hover">
+                        <table class="table table-bordered table-hover">
                             <thead>
                                 <tr>
                                     <th>Id</th>
@@ -53,11 +53,11 @@ if (isset($_POST['submit'])){
                             <tbody>
                                 <?php
                     while ($row=mysqli_fetch_array ( $select_categories)){
-                    $cat_title = $row['cat_id'];
+                    $cat_id = $row['cat_id'];
                     $cat_title = $row['cat_title'];
                     echo "<tr>";
-                    echo "<td>{$cat_id}Category</td>";
-                    echo "<td>{$cat_title}Category</td>";
+                    echo "<td>{$cat_id}</td>";
+                    echo "<td>{$cat_title}</td>";
                     echo "</tr>";
                     } ?>
 

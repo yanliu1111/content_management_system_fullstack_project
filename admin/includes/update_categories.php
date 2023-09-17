@@ -1,6 +1,16 @@
 <form action="" method="post">
     <div class="form-group">
         <label for="cat_title">Update Category</label>
+        <!-- change the sequence of update query and read query
+    Once the category is changed, the form field still displays the the original value, not the updated value. I added an else statement to clear the form from the page.
+    -->
+        <?php // update query
+                                if (isset($_POST['update_category'])){
+                                    $the_cat_id = $_POST['cat_title'];
+                                    $query = "UPDATE categories SET cat_title = '{$the_cat_id}' WHERE cat_id = {$cat_id}";
+                                    $update_query = mysqli_query($connection, $query);
+                                }
+                                ?>
         <?php // update and include query
                                 if (isset($_GET['edit'])){
                                     $cat_id = $_GET['edit'];
@@ -17,13 +27,7 @@
         <?php }}
                                 ?>
 
-        <?php // update query
-                                if (isset($_POST['update_category'])){
-                                    $the_cat_id = $_POST['cat_title'];
-                                    $query = "UPDATE categories SET cat_title = '$the_cat_id' WHERE cat_id = {$cat_id}";
-                                    $update_query = mysqli_query($connection, $query);
-                                }
-                                ?>
+
 
     </div>
     <div class="form-group">

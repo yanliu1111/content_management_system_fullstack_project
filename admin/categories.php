@@ -25,12 +25,12 @@
                             </div>
                         </form>
                         <?php // update and include query
-if (isset($_GET['edit'])){
-    $cat_id = $_GET['edit'];
-    include "includes/update_categories.php";
-    
-}
-                    ?>
+                            if (isset($_GET['edit'])){
+                                $cat_id = $_GET['edit'];
+                                include "includes/update_categories.php";
+                                
+                            }
+                        ?>
                     </div> <!-- add category form -->
                     <div class="col-xs-6">
 
